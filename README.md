@@ -5,7 +5,7 @@ add documentation summary for entity framework 6.x edmx file from database table
 
 use steps:
 
- ![image](EdmxDoc/screenshots/1.png) 
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/1.png) 
  ![image](EdmxDoc/screenshots/2.png) 
  ![image](EdmxDoc/screenshots/3.png) 
  ![image](EdmxDoc/screenshots/4.png) 
