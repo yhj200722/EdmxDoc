@@ -6,21 +6,21 @@ add documentation summary for entity framework 6.x edmx file from database table
 use steps:
 
  ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/1.png) 
- ![image](EdmxDoc/screenshots/2.png) 
- ![image](EdmxDoc/screenshots/3.png) 
- ![image](EdmxDoc/screenshots/4.png) 
- ![image](EdmxDoc/screenshots/5.png)
- ![image](EdmxDoc/screenshots/6.png)
- ![image](EdmxDoc/screenshots/7.png)
- ![image](EdmxDoc/screenshots/8.png)
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/2.png) 
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/3.png) 
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/4.png) 
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/5.png)
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/6.png)
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/7.png)
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/8.png)
 
 copy 'Db.Context.tt' and 'Db.tt' files at EdmxDoc\T4 directory to your project directory where your edmx file at, replace your 'xxx.Context.tt' and 'xxx.Db.tt' files, then open the two .tt files, modify database connection string to meet your requirement, save it, that's all.
 
 将Edmx项目T4目录下的2个.tt文件复制到你的edmx文件所在目录，替换原有的2个.tt文件，然后打开.tt文件，将数据库连接字符串改为你自己的，保存即可
 
- ![image](EdmxDoc/screenshots/9.png)
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/9.png)
 
 最终效果
 
- ![image](EdmxDoc/screenshots/9.png)
- ![image](EdmxDoc/screenshots/10.png)
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/9.png)
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/10.png)
