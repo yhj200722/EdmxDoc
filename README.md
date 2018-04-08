@@ -18,7 +18,7 @@ copy 'Db.Context.tt' and 'Db.tt' files at EdmxDoc\T4 directory to your project d
 
 将Edmx项目T4目录下的2个.tt文件复制到你的edmx文件所在目录，替换原有的2个.tt文件，然后打开.tt文件，将数据库连接字符串改为你自己的，保存即可
 
- ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/9.png)
+ ![image](https://github.com/yhj200722/EdmxDoc/raw/master/screenshots/11.png)
 
 最终效果
 
