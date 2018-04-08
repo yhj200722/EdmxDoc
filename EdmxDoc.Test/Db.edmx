@@ -65,7 +65,7 @@
           </Key>
           <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity">
             <Documentation>
-              <Summary>博客主键(自增)</Summary>
+              <Summary>博客主键</Summary>
             </Documentation>
           </Property>
           <Property Name="Url" Type="String" Nullable="false" MaxLength="2048" FixedLength="false" Unicode="true">

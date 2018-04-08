@@ -26,7 +26,7 @@ namespace EdmxDoc.Test
     
     			
     	/// <summary>
-        /// 博客主键(自增)
+        /// 博客主键
         /// </summary>
         public int BlogId { get; set; }
     			
