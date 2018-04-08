@@ -1,0 +1,12 @@
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\bin\Debug\EdmxDoc.Test.dll.config
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\bin\Debug\EdmxDoc.Test.dll
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\bin\Debug\EdmxDoc.Test.pdb
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\bin\Debug\EntityFramework.dll
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\bin\Debug\EntityFramework.SqlServer.dll
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\bin\Debug\EntityFramework.xml
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\bin\Debug\EntityFramework.SqlServer.xml
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\obj\Debug\EdmxDoc.Test.csprojResolveAssemblyReference.cache
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\obj\Debug\EdmxDoc.Test.csproj.CoreCompileInputs.cache
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\obj\Debug\EdmxDoc.Test.dll
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc.Test\obj\Debug\EdmxDoc.Test.pdb

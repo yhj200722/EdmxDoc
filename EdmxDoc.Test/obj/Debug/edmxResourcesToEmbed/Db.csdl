@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TestContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Blogs" EntityType="testModel.Blogs" />
+    <EntitySet Name="Posts" EntityType="testModel.Posts" />
+    <AssociationSet Name="FK_Posts_Blogs_BlogId" Association="testModel.FK_Posts_Blogs_BlogId">
+      <End Role="Blogs" EntitySet="Blogs" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Blogs">
+    <Documentation>
+      <Summary>博客表</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity">
+      <Documentation>
+        <Summary>博客主键</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="Url" Type="String" Nullable="false" MaxLength="2048" FixedLength="false" Unicode="true">
+      <Documentation>
+        <Summary>博客url</Summary>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="Posts" Relationship="testModel.FK_Posts_Blogs_BlogId" FromRole="Blogs" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Documentation>
+      <Summary>发帖表</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity">
+      <Documentation>
+        <Summary>帖子主键</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="BlogId" Type="Int32" Nullable="false">
+      <Documentation>
+        <Summary>博客ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true">
+      <Documentation>
+        <Summary>发帖内容</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true">
+      <Documentation>
+        <Summary>帖子标题</Summary>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="Blogs" Relationship="testModel.FK_Posts_Blogs_BlogId" FromRole="Posts" ToRole="Blogs" />
+  </EntityType>
+  <Association Name="FK_Posts_Blogs_BlogId">
+    <End Type="testModel.Blogs" Role="Blogs" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="testModel.Posts" Role="Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blogs">
+        <PropertyRef Name="BlogId" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="BlogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

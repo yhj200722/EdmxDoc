@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Blogs">
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Url" Type="nvarchar" MaxLength="2048" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Posts">
+          <Key>
+            <PropertyRef Name="PostId" />
+          </Key>
+          <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BlogId" Type="int" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Posts_Blogs_BlogId">
+          <End Role="Blogs" Type="Self.Blogs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blogs">
+              <PropertyRef Name="BlogId" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="BlogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="testModelStoreContainer">
+          <EntitySet Name="Blogs" EntityType="Self.Blogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Posts_Blogs_BlogId" Association="Self.FK_Posts_Blogs_BlogId">
+            <End Role="Blogs" EntitySet="Blogs" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TestContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Blogs" EntityType="testModel.Blogs" />
+          <EntitySet Name="Posts" EntityType="testModel.Posts" />
+          <AssociationSet Name="FK_Posts_Blogs_BlogId" Association="testModel.FK_Posts_Blogs_BlogId">
+            <End Role="Blogs" EntitySet="Blogs" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Blogs">
+          <Documentation>
+            <Summary>博客表</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity">
+            <Documentation>
+              <Summary>博客主键(自增)</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="2048" FixedLength="false" Unicode="true">
+            <Documentation>
+              <Summary>博客url</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Posts" Relationship="testModel.FK_Posts_Blogs_BlogId" FromRole="Blogs" ToRole="Posts" />
+        </EntityType>
+        <EntityType Name="Posts">
+          <Documentation>
+            <Summary>发帖表</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="PostId" />
+          </Key>
+          <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity">
+            <Documentation>
+              <Summary>帖子主键(自增)</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="BlogId" Type="Int32" Nullable="false">
+            <Documentation>
+              <Summary>博客ID</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true">
+            <Documentation>
+              <Summary>发帖内容</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true">
+            <Documentation>
+              <Summary>帖子标题</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Blogs" Relationship="testModel.FK_Posts_Blogs_BlogId" FromRole="Posts" ToRole="Blogs" />
+        </EntityType>
+        <Association Name="FK_Posts_Blogs_BlogId">
+          <End Type="testModel.Blogs" Role="Blogs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="testModel.Posts" Role="Posts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blogs">
+              <PropertyRef Name="BlogId" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="BlogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="testModelStoreContainer" CdmEntityContainer="TestContext">
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="testModel.Blogs">
+              <MappingFragment StoreEntitySet="Blogs">
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="testModel.Posts">
+              <MappingFragment StoreEntitySet="Posts">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

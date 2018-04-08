@@ -1,0 +1,5 @@
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc\bin\Debug\EdmxDoc.dll
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc\bin\Debug\EdmxDoc.pdb
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc\obj\Debug\EdmxDoc.csproj.CoreCompileInputs.cache
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc\obj\Debug\EdmxDoc.dll
+D:\workinfo\projects\code-generation-test-project\CodeTemplate\T4\EFTSQLDocumentation.GeneratorForm\EdmxDoc\EdmxDoc\obj\Debug\EdmxDoc.pdb
