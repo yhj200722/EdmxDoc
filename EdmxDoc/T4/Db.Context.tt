@@ -1,5 +1,5 @@
 ﻿<#@ template language="C#" debug="false" hostspecific="true"#>
-<#@ assembly name="$(SolutionDir)/packages/EdmxDoc.dll" #>
+<#@ assembly name="$(SolutionDir)/packages/EdmxDoc.1.0.3/lib/net45/EdmxDoc.resources.dll" #>
 <#@ include file="EF6.Utility.CS.ttinclude"#>
 <#@ output extension=".cs"#>
 <#
